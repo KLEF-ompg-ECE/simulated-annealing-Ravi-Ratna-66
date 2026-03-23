@@ -221,17 +221,43 @@ if __name__ == "__main__":
 
     # ==========================================================================
     # EXPERIMENT 2 - Effect of Cooling Rate
-    # TODO: Copy this block THREE times below (for 0.80, 0.95, and 0.995).
-    #       Change cooling_rate and the plot filename each time.
-    #       Record results in README.md.
     # ==========================================================================
 
-    # --- Copy and edit below this line ---
+    print("=" * 48)
+    print("  EXPERIMENT 2a - Cooling Rate 0.80")
+    print("=" * 48)
 
-    # tt2, clashes2, cl2, tl2 = run_sa(
-    #     initial_temp=100.0, cooling_rate=0.80,    # <- change this
-    #     min_temp=0.1, max_iterations=5000, seed=42
-    # )
-    # print_timetable(tt2)
-    # print(f"  Final clashes : {clashes2}")
-    # save_plot(cl2, tl2, "plots/experiment_2a.png", "cooling_rate=0.80")   # <- change filename
+    tt2, clashes2, cl2, tl2 = run_sa(
+        initial_temp=100.0, cooling_rate=0.80,
+        min_temp=0.1, max_iterations=5000, seed=42
+    )
+    print_timetable(tt2)
+    print(f"  Iterations     : {len(cl2)}")
+    print(f"  Final clashes : {clashes2}")
+    save_plot(cl2, tl2, "plots/experiment_2a.png", "cooling_rate=0.80")
+
+    print("=" * 48)
+    print("  EXPERIMENT 2b - Cooling Rate 0.95")
+    print("=" * 48)
+
+    tt3, clashes3, cl3, tl3 = run_sa(
+        initial_temp=100.0, cooling_rate=0.95,
+        min_temp=0.1, max_iterations=5000, seed=42
+    )
+    print_timetable(tt3)
+    print(f"  Iterations     : {len(cl3)}")
+    print(f"  Final clashes : {clashes3}")
+    save_plot(cl3, tl3, "plots/experiment_2b.png", "cooling_rate=0.95")
+
+    print("=" * 48)
+    print("  EXPERIMENT 2c - Cooling Rate 0.995")
+    print("=" * 48)
+
+    tt4, clashes4, cl4, tl4 = run_sa(
+        initial_temp=100.0, cooling_rate=0.995,
+        min_temp=0.1, max_iterations=5000, seed=42
+    )
+    print_timetable(tt4)
+    print(f"  Iterations     : {len(cl4)}")
+    print(f"  Final clashes : {clashes4}")
+    save_plot(cl4, tl4, "plots/experiment_2c.png", "cooling_rate=0.995")
